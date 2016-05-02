@@ -1,0 +1,2 @@
+# CompensationCalculator
+Simple calculator - Java
