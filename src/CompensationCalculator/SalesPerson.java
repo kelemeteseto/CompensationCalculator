@@ -17,7 +17,8 @@ class SalesPerson
     private final double baseSalary, salesTarget, eightyPercent, 
             baseCommission, acceleratedCommission;
     
-    /**     
+    /** 
+     * Constructor for SalesPerson that passes annualSales as an argument
      * @param annualSales 
      */
     SalesPerson(double annualSales) 
