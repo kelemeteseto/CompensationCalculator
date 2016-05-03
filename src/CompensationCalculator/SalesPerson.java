@@ -27,7 +27,8 @@ class SalesPerson
         this.setPercentOfTarget(0.80 * salesTarget);
         this.setBaseCommission(0.15);
         this.setAcceleratedCommission(1.25 * baseCommission);
-        this.setCompensation(baseSalary, annualSales, salesTarget, percentOfTarget, baseCommission, acceleratedCommission);
+        this.setCompensation(baseSalary, annualSales, salesTarget, 
+                percentOfTarget, baseCommission, acceleratedCommission);
     }
     
     /**
@@ -181,14 +182,16 @@ class SalesPerson
             double salesTarget,
             double percentOfTarget,
             double baseCommission,
-            double accelerationCommission) {
+            double acceleratedCommission) 
+    {
         
         this.compensation = baseSalary + (baseCommission * annualSales);
     }
     /**
      * Get method to return compensation
      * 
-     * if annualSales less than or equal to 80% of salesTarget, return compensation = baseSalary
+     * if annualSales less than or equal to 80% of salesTarget, 
+     * return compensation = baseSalary
      * 
      * if annualSales greater than 80% of salesTarget and less than salesTarget, 
      * return compensation = baseSalary + (baseCommission * annualSales)
