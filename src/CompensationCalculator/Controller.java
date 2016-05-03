@@ -11,7 +11,6 @@ package CompensationCalculator;
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Objects;
 
 public class Controller 
 {
@@ -34,8 +33,26 @@ public class Controller
             
             System.out.print(" Enter name for sales person #" + count + ": ");
             String userName = userInput.getScanner();
-            System.out.print(" Enter sales total for " + userName + ": ");
-            annualSales = Double.parseDouble(userInput.getScanner());
+            while (!userName.matches("^[a-zA-Z]+$"))
+            {
+                System.out.print(" Enter a valid name for sales person #" + count + ": ");
+                userName = userInput.getScanner();
+            }
+            
+            while (true) {
+                System.out.print(" Enter sales total for " + userName + ": ");
+                try 
+                {
+                    annualSales = Double.parseDouble(userInput.getScanner());
+                    break;
+                } 
+                catch (NumberFormatException ex) 
+                {
+                    System.out.println(" Invalid number!");
+                }
+            }
+                        
+            System.out.println("\n*****************************************\n");
             
             arrayUserNames.add(userName);
             arrayUserTotals.add(annualSales);
